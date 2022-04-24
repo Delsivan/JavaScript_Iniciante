@@ -7,15 +7,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exemplo de JavaScript</title>
 
-    <link rel="stylesheet" type="text/css"  href="estilo.css" />
 </head>
 
 <body>
 
 <script>
-    const numero = 10;
+    const numero = prompt("Digite um número e tecle enter");
     if ( numero>0) {
-        alert("O numero é maior 0");
+        if (numero % 2 == 0) {
+            alert(numero+" é positivo e par.");
+        }
+        else{
+            alert(numero+" é positivo e impar.");
+        }
+    }
+    else {
+        if ( numero == 0){
+        alert("O número digitado é 0");
+        }
+        else{
+            alert(numero+" é negativo");
+        }
     }
 </script>
 
