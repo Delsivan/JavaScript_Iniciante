@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudando o DOM</title>
+</head>
+<body>
+    <h1>Documento WEB</h1>
+    <P id="Principal">O DOM é uma representação de um documento WEB</P>
+    <P class="Paragrafo">Essa representação pode ser acessada por métodos e atributos.</P>
+    <p class="Paragrafo">Os métodos permitem selecionar elementos HTML, ou até mesmo criar novos.</p>
+    <p class="Paragrafo">O atributo innerHtml é o responsável por alterar o conteúdo de um elemento.</p>
+    <p id="Novo"></p>
+    <p id="Novo">getElementsByTagName</p>
+    
+</body>
+<script>
+    //innerHtml é o responsável por alterar o conteúdo de um elemento
+    // getElementById traz somente um elemento, sempre o primeiro elemento.
+    document.getElementById("Novo").innerHTML="Adicionando conteúdo através do DOM!";
+
+    var paragrafo = document.getElementById("Novo");
+    paragrafo.innerHTML = "Adicionando um conteúdo novo"
+
+    //getElementsByTagName retorna uma coleção (lista) de elementos HTML
+    //Precisa inforamar a posição da lista para realizar alterações.
+    var paragrafos = document.getElementsByTagName("p");
+    console.log(paragrafos);
+    paragrafos[0].innerHTML="Novo Paragrafo";
+
+    //getElementsByClassName
+    // O método getElementsByClassName retorna um vetor de Objetos o HTMLCollection que contém todos elementos filhos que possuem
+    // o nome da classe informado.
+    console.log(document.getElementsByClassName("Paragrafo"));
+    document.getElementsByClassName("Paragrafo")[2].innerHTML="Alterando...";
+
+    // O método querySelector retorna apenas o primeiro elemento que corresponde ao seletor especificado
+    // o seletor pode ser uma classe, ID ou até mesmo um nome de um elemento HTML, ele é mais flexivel.
+    // O querySelector traz apenas um elemento já o querySelectorAll traz uma lista.
+    console.log(document.querySelector("p"))
+    document.querySelector("p").style.backgroundColor="red";
+
+    var resultado = document.querySelector("h1");
+    resultado.style.color="white";
+    resultado.style.fontSize="bold";
+    resultado.style.backgroundColor="blue";
+
+    document.querySelector(".Paragrafo").style.backgroundColor="green";
+
+    console.log(document.querySelectorAll("p"))
+    document.querySelectorAll(".Paragrafo")[2].style.backgroundColor="purple";
+
+
+</script>
+</html>
