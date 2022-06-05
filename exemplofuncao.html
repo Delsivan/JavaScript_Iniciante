@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções em JavaScript</title>
+</head>
+
+<script>
+    // Funções com declaração de função, permite o hoisting onde é possivel chamar a função antes de declarar
+    // expressão de função
+    mensagem();
+    function mensagem(){
+        alert("Olá")
+        console.log("Estou aqui!")
+    }
+    //Com o hoisting é possivel chamar a função antes de declarar.
+
+    function elevarAoQuadrado(numero){
+        return numero*numero;
+    }
+    alert("o quadrado de 10 é "+elevarAoQuadrado(10));
+
+    //Função sendo expressão, nesse caso ele não permite o hoisting.
+    //Expressão de função é atribuir uma função a uma variável, a função pode ou não ter um nome.
+    var soma = function somaValores(numero1, numero2){
+        return numero1 + numero2
+    }
+    alert("RESULTADO = "+soma(5, 5));
+
+
+</script>
+
+<body>
+    <h1>Funções em JavaScript</h1>
+    <input type="submit" value="Botão mensagem" onclick="mensagem()">
+</body>
+</html>
