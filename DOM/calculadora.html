@@ -5,8 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
+    <link rel="stylesheet" href="estilos/estilos.css">
+    <script src="scripts/calc.js"></script>
 </head>
 <body>
-    
+    <h1>Calculadora</h1>
+    <form action="">
+        <ul>
+            <li>
+                <label for="valor1">Primeiro valor</label>
+                <input type="text" id="valor1">
+            </li>
+            <li>
+                <label for="operacao">Escolha a operação aritmética</label>
+                <select id="operacao">
+                    <option value="+">Adição</option>
+                    <option value="-">Subtração</option>
+                    <option value="*">Multiplicação</option>
+                    <option value="/">Divisão</option>
+                </select>
+            </li>
+            <li>
+                <label for="valor2">Segundo Valor</label>
+                <input type="text" id="valor2">
+            </li>
+        </ul>
+        <input type="button" onclick="Calcular('valor1', 'valor2', 'operacao', 'saida')" value="Calcular">
+        <input type="button" onclick="Limpar('valor1','valor2')" value="Limpar">
+    </form>
+    <p id="saida"></p>
 </body>
 </html>
